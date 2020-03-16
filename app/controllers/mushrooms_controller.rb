@@ -7,6 +7,11 @@ class MushroomsController < ApplicationController
     @mushrooms = Mushroom.all
   end
 
+  def import
+    Mushroom.my_import()
+    redirect_to root_url, notice: "Successfully Imported Mushrooms!"
+  end
+
   # GET /mushrooms/1
   # GET /mushrooms/1.json
   def show
@@ -28,7 +33,7 @@ class MushroomsController < ApplicationController
 
     respond_to do |format|
       if @mushroom.save
-        format.html { redirect_to @mushroom, notice: 'Mushroom was successfully created.' }
+        format.html { redirect_to @mushroom, notice: "Mushroom was successfully created." }
         format.json { render :show, status: :created, location: @mushroom }
       else
         format.html { render :new }
@@ -42,7 +47,7 @@ class MushroomsController < ApplicationController
   def update
     respond_to do |format|
       if @mushroom.update(mushroom_params)
-        format.html { redirect_to @mushroom, notice: 'Mushroom was successfully updated.' }
+        format.html { redirect_to @mushroom, notice: "Mushroom was successfully updated." }
         format.json { render :show, status: :ok, location: @mushroom }
       else
         format.html { render :edit }
@@ -56,19 +61,20 @@ class MushroomsController < ApplicationController
   def destroy
     @mushroom.destroy
     respond_to do |format|
-      format.html { redirect_to mushrooms_url, notice: 'Mushroom was successfully destroyed.' }
+      format.html { redirect_to mushrooms_url, notice: "Mushroom was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mushroom
-      @mushroom = Mushroom.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def mushroom_params
-      params.fetch(:mushroom, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_mushroom
+    @mushroom = Mushroom.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def mushroom_params
+    params.fetch(:mushroom, {})
+  end
 end

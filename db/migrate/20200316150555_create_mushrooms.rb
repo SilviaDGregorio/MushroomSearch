@@ -36,6 +36,7 @@ class CreateMushrooms < ActiveRecord::Migration[6.0]
     add_column :mushrooms, :odor, :odor
     add_column :mushrooms, :gill_attachment, :gill_attachment
     add_column :mushrooms, :gill_spacing, :gill_spacing
+    add_column :mushrooms, :gill_size, :gill_size
     add_column :mushrooms, :gill_color, :gill_color
     add_column :mushrooms, :stalk_shape, :stalk_shape
     add_column :mushrooms, :stalk_root, :stalk_root
