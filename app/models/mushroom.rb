@@ -29,7 +29,6 @@ class Mushroom < ApplicationRecord
   enum habitat: { grasses: "g", leaves: "l", meadows: "m", paths: "p", urban: "u", waste: "w", woods: "d" }, _suffix: true
 
   scope :cap_shape, ->(cap_shape) { where cap_shape: cap_shape }
-
   scope :cap_surface, ->(cap_surface) { where cap_surface: cap_surface }
   scope :class_type, ->(class_type) { where classes: class_type }
   scope :cap_color, ->(cap_color) { where cap_color: cap_color }

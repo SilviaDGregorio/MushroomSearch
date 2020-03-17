@@ -1,0 +1,85 @@
+<h1>Mushrooms</h1>
+<h2> <%= @mushrooms.count %></h2>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mushrooms.each do |mushroom| %>
+      <tr>
+        <%= mushroom.cap_shape %>
+      </tr>
+      <tr>
+        <%= mushroom.cap_surface %>
+      </tr>
+      <tr>
+        <%= mushroom.classes %>
+      </tr>
+      <tr>
+        <%= mushroom.cap_color %>
+      </tr>
+      <tr>
+        <%= mushroom.bruises %>
+      </tr>
+      <tr>
+        <%= mushroom.odor %>
+      </tr>
+      <tr>
+        <%= mushroom.gill_attachment %>
+      </tr>
+      <tr>
+        <%= mushroom.gill_spacing %>
+      </tr>
+      <tr>
+        <%= mushroom.gill_size %>
+      </tr>
+      <tr>
+        <%= mushroom.gill_color %>
+      </tr>
+      <tr>
+        <%= mushroom.stalk_shape %>
+      </tr>
+      <tr>
+        <%= mushroom.stalk_root %>
+      </tr>
+      <tr>
+        <%= mushroom.stalk_surface_above_ring %>
+      </tr>
+      <tr>
+        <%= mushroom.stalk_surface_below_ring %>
+      </tr>
+      <tr>
+        <%= mushroom.stalk_color_above_ring %>
+      </tr>
+      <tr>
+        <%= mushroom.stalk_color_below_ring %>
+      </tr>
+      <tr>
+        <%= mushroom.veil_type %>
+      </tr>
+      <tr>
+        <%= mushroom.veil_color %>
+      </tr>
+      <tr>
+        <%= mushroom.ring_number %>
+      </tr>
+      <tr>
+        <%= mushroom.ring_type %>
+      </tr>
+      <tr>
+        <%= mushroom.spore_print_color %>
+      </tr>
+      <tr>
+        <%= mushroom.population %>
+      </tr>
+      <tr>
+        <%= mushroom.habitat %>
+      </tr>
+      <br>
+    <% end %>
+
+  </tbody>
+</table>
