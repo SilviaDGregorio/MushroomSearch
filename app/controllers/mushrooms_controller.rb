@@ -4,7 +4,11 @@ class MushroomsController < ApplicationController
   # GET /mushrooms
   # GET /mushrooms.json
   def index
-    @mushrooms = Mushroom.all
+    @mushrooms = Mushroom.filter(params.slice(:classes, :cap_shape, :cap_surface, :cap_color, :bruises, :odor, :gill_attachment,
+                                              :gill_spacing, :gill_size, :gill_color, :stalk_shape, :stalk_root,
+                                              :stalk_surface_above_ring, :stalk_surface_below_ring, :stalk_color_above_ring,
+                                              :stalk_color_below_ring, :veil_type, :veil_color, :ring_number, :ring_type, :spore_print_color,
+                                              :population, :habitat))
   end
 
   def import
@@ -74,7 +78,12 @@ class MushroomsController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
+
   def mushroom_params
-    params.fetch(:mushroom, {})
+    params.fetch(:mushroom, {}).permit(:classes, :cap_shape, :cap_surface, :cap_color, :bruises, :odor, :gill_attachment,
+                                       :gill_spacing, :gill_size, :gill_color, :stalk_shape, :stalk_root,
+                                       :stalk_surface_above_ring, :stalk_surface_below_ring, :stalk_color_above_ring,
+                                       :stalk_color_below_ring, :veil_type, :veil_color, :ring_number, :ring_type, :spore_print_color,
+                                       :population, :habitat)
   end
 end

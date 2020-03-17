@@ -1,5 +1,53 @@
 <p id="notice"><%= notice %></p>
-
+<%= form_with model: @mushroom, method: :get, local: true do |form| %>
+  <p>class</p>
+  <%= form.select :classes, Mushroom.classes.keys %>
+  <p>cap_shape</p>
+  <%= form.select :cap_shape, Mushroom.cap_shapes.keys %>
+  <p>cap_surface</p>
+  <%= form.select :cap_surface, Mushroom.cap_surfaces.keys %>
+  <p>cap_color</p>
+  <%= form.select :cap_color, Mushroom.cap_colors.keys %>
+  <p>bruises</p>
+  <%= form.select :bruises, Mushroom.bruises.keys %>
+  <p>odor</p>
+  <%= form.select :odor, Mushroom.odors.keys %>
+  <p>gill_attachment</p>
+  <%= form.select :gill_attachment, Mushroom.gill_attachments.keys %>
+  <p>gill_spacing</p>
+  <%= form.select :gill_spacing, Mushroom.gill_spacings.keys %>
+  <p>gill_size</p>
+  <%= form.select :gill_size, Mushroom.gill_sizes.keys %>
+  <p>gill_color</p>
+  <%= form.select :gill_color, Mushroom.gill_colors.keys %>
+  <p>stalk_shape</p>
+  <%= form.select :stalk_shape, Mushroom.stalk_shapes.keys %>
+  <p>stalk_root</p>
+  <%= form.select :stalk_root, Mushroom.stalk_roots.keys %>
+  <p>stalk_surface_above_ring</p>
+  <%= form.select :stalk_surface_above_ring, Mushroom.stalk_surface_above_rings.keys %>
+  <p>stalk_surface_below_ring</p>
+  <%= form.select :stalk_surface_below_ring, Mushroom.stalk_surface_below_rings.keys %>
+  <p>stalk_color_above_ring</p>
+  <%= form.select :stalk_color_above_ring, Mushroom.stalk_color_above_rings.keys %>
+  <p>stalk_color_below_ring</p>
+  <%= form.select :stalk_color_below_ring, Mushroom.stalk_color_below_rings.keys %>
+  <p>veil_type</p>
+  <%= form.select :veil_type, Mushroom.veil_types.keys %>
+  <p>veil_color</p>
+  <%= form.select :veil_color, Mushroom.veil_colors.keys %>
+  <p>ring_number</p>
+  <%= form.select :ring_number, Mushroom.ring_numbers.keys %>
+  <p>ring_type</p>
+  <%= form.select :ring_type, Mushroom.ring_types.keys %>
+  <p>spore_print_color</p>
+  <%= form.select :spore_print_color, Mushroom.spore_print_colors.keys %>
+  <p>population</p>
+  <%= form.select :population, Mushroom.populations.keys %>
+  <p>habitat</p>
+  <%= form.select :habitat, Mushroom.habitats.keys %>
+  <%= submit_tag("Index") %>
+<% end %>
 <h1>Mushrooms</h1>
 
 <table>
@@ -12,9 +60,9 @@
   <tbody>
     <% @mushrooms.each do |mushroom| %>
       <tr>
-        <td><%= link_to 'Show', mushroom %></td>
-        <td><%= link_to 'Edit', edit_mushroom_path(mushroom) %></td>
-        <td><%= link_to 'Destroy', mushroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Show", mushroom %></td>
+        <td><%= link_to "Edit", edit_mushroom_path(mushroom) %></td>
+        <td><%= link_to "Destroy", mushroom, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +70,4 @@
 
 <br>
 
-<%= link_to 'New Mushroom', new_mushroom_path %>
+<%= link_to "New Mushroom", new_mushroom_path %>
