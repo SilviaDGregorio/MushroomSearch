@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <%= form_with model: @mushroom, method: :get, local: true do |form| %>
   <p>class</p>
-  <%= form.select :classes, Mushroom.classes.keys %>
+  <%= form.select :class, Mushroom.classes.keys %>
   <p>cap_shape</p>
   <%= form.select :cap_shape, Mushroom.cap_shapes.keys %>
   <p>cap_surface</p>
@@ -9,7 +9,7 @@
   <p>cap_color</p>
   <%= form.select :cap_color, Mushroom.cap_colors.keys %>
   <p>bruises</p>
-  <%= form.select :bruises, Mushroom.bruises.keys %>
+  <%= form.select :bruis, Mushroom.bruises.keys %>
   <p>odor</p>
   <%= form.select :odor, Mushroom.odors.keys %>
   <p>gill_attachment</p>
