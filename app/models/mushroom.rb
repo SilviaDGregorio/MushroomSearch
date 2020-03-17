@@ -5,7 +5,7 @@ class Mushroom < ApplicationRecord
   require "activerecord-import/active_record/adapters/postgresql_adapter"
 
   enum cap_shape: { bell: "b", conical: "c", convex: "x", flat: "f", knobbed: "k", sunken: "s" }, _suffix: true
-  enum class: { edible: "e", poisonous: "p" }, _suffix: true
+  enum class_type: { edible: "e", poisonous: "p" }, _suffix: true
   enum cap_surface: { fibrous: "f", grooves: "g", scaly: "y", smooth: "s" }, _suffix: true
   enum cap_color: { brown: "n", buff: "b", cinnamon: "c", gray: "g", green: "r", pink: "p", purple: "u", red: "e", white: "w", yellow: "y" }, _suffix: true
   enum bruises: { bruises: "t", no: "f" }, _suffix: true
@@ -31,7 +31,7 @@ class Mushroom < ApplicationRecord
   scope :cap_shape, ->(cap_shape) { where cap_shape: cap_shape }
 
   scope :cap_surface, ->(cap_surface) { where cap_surface: cap_surface }
-  scope :class, ->(classes) { where classes: classes }
+  scope :class_type, ->(class_type) { where classes: class_type }
   scope :cap_color, ->(cap_color) { where cap_color: cap_color }
   scope :bruis, ->(bruises) { where bruises: bruises }
   scope :odor, ->(odor) { where odor: odor }
