@@ -1,52 +1,99 @@
 <p id="notice"><%= notice %></p>
-<%= form_with model: @mushroom, method: :get, local: true do |form| %>
-  <p>class</p>
-  <%= form.select :class_type, Mushroom.class_types.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:class_type] %>
-  <p>cap_shape</p>
-  <%= form.select :cap_shape, Mushroom.cap_shapes.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:cap_shape] %>
-  <p>cap_surface</p>
-  <%= form.select :cap_surface, Mushroom.cap_surfaces.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:cap_surface] %>
-  <p>cap_color</p>
-  <%= form.select :cap_color, Mushroom.cap_colors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:cap_color] %>
-  <p>bruises</p>
-  <%= form.select :bruis, Mushroom.bruises.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:class] %>
-  <p>bruis</p>
-  <%= form.select :odor, Mushroom.odors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:class] %>
-  <p>odor</p>
-  <%= form.select :gill_attachment, Mushroom.gill_attachments.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:gill_attachment] %>
-  <p>gill_spacing</p>
-  <%= form.select :gill_spacing, Mushroom.gill_spacings.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:gill_spacing] %>
-  <p>gill_size</p>
-  <%= form.select :gill_size, Mushroom.gill_sizes.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:gill_size] %>
-  <p>gill_color</p>
-  <%= form.select :gill_color, Mushroom.gill_colors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:gill_color] %>
-  <p>stalk_shape</p>
-  <%= form.select :stalk_shape, Mushroom.stalk_shapes.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_shape] %>
-  <p>stalk_root</p>
-  <%= form.select :stalk_root, Mushroom.stalk_roots.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_root] %>
-  <p>stalk_surface_above_ring</p>
-  <%= form.select :stalk_surface_above_ring, Mushroom.stalk_surface_above_rings.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_surface_above_ring] %>
-  <p>stalk_surface_below_ring</p>
-  <%= form.select :stalk_surface_below_ring, Mushroom.stalk_surface_below_rings.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_surface_below_ring] %>
-  <p>stalk_color_above_ring</p>
-  <%= form.select :stalk_color_above_ring, Mushroom.stalk_color_above_rings.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_color_above_ring] %>
-  <p>stalk_color_below_ring</p>
-  <%= form.select :stalk_color_below_ring, Mushroom.stalk_color_below_rings.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_color_below_ring] %>
-  <p>veil_type</p>
-  <%= form.select :veil_type, Mushroom.veil_types.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:veil_type] %>
-  <p>veil_color</p>
-  <%= form.select :veil_color, Mushroom.veil_colors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:veil_color] %>
-  <p>ring_number</p>
-  <%= form.select :ring_number, Mushroom.ring_numbers.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:ring_number] %>
-  <p>ring_type</p>
-  <%= form.select :ring_type, Mushroom.ring_types.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:ring_type] %>
-  <p>spore_print_color</p>
-  <%= form.select :spore_print_color, Mushroom.spore_print_colors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:spore_print_color] %>
-  <p>population</p>
-  <%= form.select :population, Mushroom.populations.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:population] %>
-  <p>habitat</p>
-  <%= form.select :habitat, Mushroom.habitats.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:habitat] %>
+<%= form_with model: @mushroom, method: :get, local: true, :class => "filter_form" do |form| %>
+  <div>
+    <p>Classes</p>
+    <%= form.select :class_type, Mushroom.class_types.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:class_type] %>
+  </div>
+  <div>
+    <p>Cap shape</p>
+    <%= form.select :cap_shape, Mushroom.cap_shapes.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:cap_shape] %>
+  </div>
+  <div>
+    <p>Cap surface</p>
+    <%= form.select :cap_surface, Mushroom.cap_surfaces.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:cap_surface] %>
+  </div>
+  <div>
+    <p>Cap color</p>
+    <%= form.select :cap_color, Mushroom.cap_colors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:cap_color] %>
+  </div>
+  <div>
+    <p>Bruises</p>
+    <%= form.select :bruis, Mushroom.bruises.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:class] %>
+  </div>
+  <div>
+    <p>Odor</p>
+    <%= form.select :odor, Mushroom.odors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:class] %>
+  </div>
+  <div>
+    <p>Gill attachment</p>
+    <%= form.select :gill_attachment, Mushroom.gill_attachments.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:gill_attachment] %>
+  </div>
+  <div>
+    <p>Gill spacing</p>
+    <%= form.select :gill_spacing, Mushroom.gill_spacings.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:gill_spacing] %>
+  </div>
+  <div>
+    <p>Gill size</p>
+    <%= form.select :gill_size, Mushroom.gill_sizes.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:gill_size] %>
+  </div>
+  <div>
+    <p>Gill color</p>
+    <%= form.select :gill_color, Mushroom.gill_colors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:gill_color] %>
+  </div>
+  <div>
+    <p>Stalk shape</p>
+    <%= form.select :stalk_shape, Mushroom.stalk_shapes.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_shape] %>
+  </div>
+  <div>
+    <p>Stalk root</p>
+    <%= form.select :stalk_root, Mushroom.stalk_roots.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_root] %>
+  </div>
+  <div>
+    <p>Stalk surface above ring</p>
+    <%= form.select :stalk_surface_above_ring, Mushroom.stalk_surface_above_rings.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_surface_above_ring] %>
+  </div>
+  <div>
+    <p>Stalk surface below ring</p>
+    <%= form.select :stalk_surface_below_ring, Mushroom.stalk_surface_below_rings.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_surface_below_ring] %>
+  </div>
+  <div>
+    <p>Stalk color above ring</p>
+    <%= form.select :stalk_color_above_ring, Mushroom.stalk_color_above_rings.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_color_above_ring] %>
+  </div>
+  <div>
+    <p>Stalk color below ring</p>
+    <%= form.select :stalk_color_below_ring, Mushroom.stalk_color_below_rings.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:stalk_color_below_ring] %>
+  </div>
+  <div>
+    <p>Veil type</p>
+    <%= form.select :veil_type, Mushroom.veil_types.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:veil_type] %>
+  </div>
+  <div>
+    <p>Veil color</p>
+    <%= form.select :veil_color, Mushroom.veil_colors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:veil_color] %>
+  </div>
+  <div>
+    <p>Ring number</p>
+    <%= form.select :ring_number, Mushroom.ring_numbers.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:ring_number] %>
+  </div>
+  <div>
+    <p>Ring type</p>
+    <%= form.select :ring_type, Mushroom.ring_types.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:ring_type] %>
+  </div>
+  <div>
+    <p>Spore print color</p>
+    <%= form.select :spore_print_color, Mushroom.spore_print_colors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:spore_print_color] %>
+  </div>
+  <div>
+    <p>Population</p>
+    <%= form.select :population, Mushroom.populations.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:population] %>
+  </div>
+  <div>
+    <p>Habitat</p>
+    <%= form.select :habitat, Mushroom.habitats.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:habitat] %>
+  </div>
   <%= submit_tag("Index") %>
+  <%= link_to "Clear Search", request.path, class: "cancel-button" %>
 <% end %>
 
 <%= render "table", mushrooms: @mushrooms %>
