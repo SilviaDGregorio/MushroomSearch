@@ -53,7 +53,6 @@ class Mushroom < ApplicationRecord
   scope :habitat, ->(habitat) { where habitat: habitat }
   def self.my_import()
     mushrooms = []
-
     CSV.foreach("app/assets/agaricus-lepiota.data", headers: true) do |row|
       mushrooms << Mushroom.new(row.to_h)
     end
