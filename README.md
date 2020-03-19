@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to install
 
-Things you may want to cover:
+* Install postgresql
+```
+$ sudo apt update
+```
+```
+$ sudo apt install postgresql postgresql-contrib libpq-dev
+```
+* Postgres connection configuration:
+```
+username: postgres
+password: postgres
+```
+* Create db
 
-* Ruby version
+```
+$ rake db:create
+$ rake db:migrate
+$ rake db:migrate RAILS_ENV=test
+```
 
-* System dependencies
+* Run Aplication
+```
+$ rails s
+Go to -> http://localhost:3000/mushrooms/import (To import the data to the DB)
 
-* Configuration
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Run tests
+```
+$ rspec
+```
