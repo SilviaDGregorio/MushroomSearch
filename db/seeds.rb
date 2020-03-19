@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 case Rails.env
 when "test"
-  Mushroom.delete_all
+  Mushroom.destroy_all
   Mushroom.create(
     classes: "e", cap_shape: "b", cap_surface: "f", cap_color: "n", bruises: "t",
     odor: "a", gill_attachment: "a", gill_spacing: "c", gill_size: "b", gill_color: "k", stalk_shape: "e",

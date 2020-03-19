@@ -6,8 +6,8 @@ RSpec.describe Mushroom, type: :model do
       @mushrooms = Mushroom.cap_shape("b")
       expect(@mushrooms.count).to eq(1)
     end
-    it "where class_type is e" do
-      @mushrooms = Mushroom.class_type("e")
+    it "where classes is e" do
+      @mushrooms = Mushroom.classes("e")
       expect(@mushrooms.count).to eq(1)
     end
     it "where cap_surface is f" do
@@ -19,7 +19,7 @@ RSpec.describe Mushroom, type: :model do
       expect(@mushrooms.count).to eq(1)
     end
     it "where bruises is t" do
-      @mushrooms = Mushroom.bruis("t")
+      @mushrooms = Mushroom.bruises("t")
       expect(@mushrooms.count).to eq(1)
     end
     it "where odor is a" do
@@ -96,8 +96,8 @@ RSpec.describe Mushroom, type: :model do
       @mushrooms = Mushroom.cap_shape("b")
       expect(@mushrooms.count).to eq(1)
     end
-    it "where class_type is e" do
-      @mushrooms = Mushroom.class_type("e")
+    it "where classes is e" do
+      @mushrooms = Mushroom.classes("e")
       expect(@mushrooms.count).to eq(1)
     end
     it "where cap_surface is f" do
@@ -109,7 +109,7 @@ RSpec.describe Mushroom, type: :model do
       expect(@mushrooms.count).to eq(1)
     end
     it "where bruises is t" do
-      @mushrooms = Mushroom.bruis("t")
+      @mushrooms = Mushroom.bruises("t")
       expect(@mushrooms.count).to eq(1)
     end
     it "where odor is a" do
