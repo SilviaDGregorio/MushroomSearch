@@ -2,7 +2,7 @@
 <%= form_with model: @mushroom, method: :get, local: true, :class => "filter_form" do |form| %>
   <div>
     <p>Classes</p>
-    <%= form.select :class_type, Mushroom.class_types.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:class_type] %>
+    <%= form.select :classes, Mushroom.class_types.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:classes] %>
   </div>
   <div>
     <p>Cap shape</p>
@@ -18,11 +18,11 @@
   </div>
   <div>
     <p>Bruises</p>
-    <%= form.select :bruis, Mushroom.bruises.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:class] %>
+    <%= form.select :bruises, Mushroom.bruises_types.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:bruises] %>
   </div>
   <div>
     <p>Odor</p>
-    <%= form.select :odor, Mushroom.odors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:class] %>
+    <%= form.select :odor, Mushroom.odors.map { |key, value| [key.humanize, value] }, :include_blank => true, :selected => params[:odor] %>
   </div>
   <div>
     <p>Gill attachment</p>
