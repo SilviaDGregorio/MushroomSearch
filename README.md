@@ -1,5 +1,7 @@
-# README
 
+# README
+## Heroku
+    https://mushroomsearch.herokuapp.com/
 ## How to install
 * Install ruby +rails
 
@@ -25,15 +27,15 @@ password: postgres
 * Create db
 
 ```
-$ rake db:create
-$ rake db:migrate
-$ rake db:migrate RAILS_ENV=test
+$ rails db:create
+$ rails db:migrate
+$ rails db:migrate RAILS_ENV=test
 ```
 
 * Run Aplication
 ```
 $ rails s
-Go to -> http://localhost:3000/mushrooms/import (To import the data to the DB)
+Go to -> http://localhost:3000/mushrooms/import (To import the data to the DB only one time)
 
 ```
 
@@ -41,3 +43,17 @@ Go to -> http://localhost:3000/mushrooms/import (To import the data to the DB)
 ```
 $ rspec
 ```
+
+# Info
+
+I created an application to search mushrooms using postgres as the DB.
+
+I didn't create indexes in the database for each column because with this amount of data I couldn't see a big enough impact.
+
+To run the application you must have the DB running.
+
+# Future improvements
+
+I should insert paginate because the loading of the table in the view is too slow.
+
+I should find a way to avoid repeating the filters and the f.selects in the view for each filter.
