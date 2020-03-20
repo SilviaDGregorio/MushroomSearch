@@ -1,16 +1,24 @@
 # README
 
 ## How to install
+* Install ruby +rails
 
+    https://gorails.com/setup/ubuntu/19.10
 * Install postgresql
 ```
 $ sudo apt update
 ```
 ```
-$ sudo apt install postgresql postgresql-contrib libpq-dev
+$ sudo apt install postgresql-11 libpq-dev
 ```
 * Postgres connection configuration:
 ```
+sudo -u postgres createuser postgres -s
+
+# If you would like to set a password for the user, you can do the following
+sudo -u postgres psql
+postgres=# \password postgres
+
 username: postgres
 password: postgres
 ```
